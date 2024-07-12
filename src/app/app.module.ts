@@ -9,6 +9,7 @@ import { ThemesListComponent } from './themes-list/themes-list.component';
 import { PostListComponent } from './post-list/post-list.component';
 import { SharedModule } from './shared/shared.module'; // Import SharedModule correctly
 import { HttpClientModule } from '@angular/common/http';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
     MainComponent,
     ThemesListComponent,
     PostListComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
