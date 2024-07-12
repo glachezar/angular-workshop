@@ -15,7 +15,7 @@ export class PostListComponent {
   constructor(private apiService: ApiService) {}
 
   ngOnInit(): void {
-    this.apiService.getPosts().subscribe({
+    this.apiService.getPosts(5).subscribe({
       next: (themes) => {
         this.postsList = themes;
 

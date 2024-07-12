@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { LoaderComponent } from '../shared/loader/loader.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 
@@ -10,10 +11,9 @@ import { LoaderComponent } from '../shared/loader/loader.component';
   declarations: [
     HeaderComponent,
     FooterComponent,
-    LoaderComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
   ],
   exports: [
     HeaderComponent,
