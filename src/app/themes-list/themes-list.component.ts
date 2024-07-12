@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Theme } from '../types/theme';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-themes-list',
@@ -6,5 +8,27 @@ import { Component } from '@angular/core';
   styleUrl: './themes-list.component.css'
 })
 export class ThemesListComponent {
+  themesList: Theme[] = [];
+  isLoading: boolean = true;
+  // thereAreNoPosts: boolean = false;
 
+  constructor(private apiService: ApiService) {}
+
+  ngOnInit(): void {
+    this.apiService.getThemes().subscribe({
+      next: (themes) => {
+        this.themesList = themes;
+
+        // if (this.postsList.length === 0) {
+        //   this.thereAreNoPosts = true;
+        // }
+
+        this.isLoading = false;
+      },
+      error: (err) => {
+        this.isLoading = false;
+        console.error(`Error: ${err}`);
+      },
+    });
+  }
 }
