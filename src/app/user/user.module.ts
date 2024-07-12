@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { ProfileComponent } from './profile/profile.component';
+import { RouterModule } from '@angular/router';
+import { UserRoutingModule } from './user-routing.module';
 
 
 
@@ -13,7 +15,13 @@ import { ProfileComponent } from './profile/profile.component';
     ProfileComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    UserRoutingModule
+  ],
+  exports: [
+    LoginComponent,
+    RegisterComponent,
+    ProfileComponent
   ]
 })
 export class UserModule { }

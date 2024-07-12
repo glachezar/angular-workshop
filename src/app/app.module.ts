@@ -10,6 +10,7 @@ import { PostListComponent } from './post-list/post-list.component';
 import { SharedModule } from './shared/shared.module'; // Import SharedModule correctly
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
+import { UserModule } from './user/user.module';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { HomeComponent } from './home/home.component';
     HttpClientModule,
     SharedModule,
     CoreModule,
+    UserModule
   ],
   providers: [],
   bootstrap: [AppComponent]
