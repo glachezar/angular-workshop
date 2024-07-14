@@ -11,6 +11,7 @@ import { SharedModule } from './shared/shared.module'; // Import SharedModule co
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
 import { UserModule } from './user/user.module';
+import { ThemeModule } from './theme/theme.module';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,7 @@ import { UserModule } from './user/user.module';
     MainComponent,
     ThemesListComponent,
     PostListComponent,
-    HomeComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +27,8 @@ import { UserModule } from './user/user.module';
     HttpClientModule,
     SharedModule,
     CoreModule,
-    UserModule
+    UserModule,
+    ThemeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
