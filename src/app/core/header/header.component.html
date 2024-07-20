@@ -16,8 +16,8 @@
                 <li >
                     <a routerLink="/profile">{{userName}}'s profile</a>
                 </li>
-                <li>
-                    <a (click)="logout()">Logout</a>
+                <li (click)="logout()">
+                    <a>Logout</a>
                 </li>
             </ul>
         </div>
@@ -31,7 +31,7 @@
                 <a routerLink="/themes">Themes</a>
             </li>
             <li >
-                <a routerLink="/new-theme">New Theme</a>
+                <a routerLink="/add-theme">New Theme</a>
             </li>
         </ul>
     </nav>
