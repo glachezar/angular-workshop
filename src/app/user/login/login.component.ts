@@ -7,10 +7,9 @@ import { DEFAULT_EMAIL_DOMAINS } from '../../shared/constants';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrl: './login.component.css'
+  styleUrl: './login.component.css',
 })
 export class LoginComponent {
-  
   appEmailDomains = DEFAULT_EMAIL_DOMAINS;
 
   constructor(private userService: UserService, private routing: Router) {}
