@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { NewThemeComponent } from './new-theme/new-theme.component';
 import { CurrentThemeComponent } from './current-theme/current-theme.component';
 import { ThemeRoutingModule } from './theme-routing.module';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -14,6 +15,7 @@ import { ThemeRoutingModule } from './theme-routing.module';
   imports: [
     CommonModule,
     ThemeRoutingModule,
+    FormsModule,
   ],
   exports: [
     NewThemeComponent,
