@@ -1,19 +1,62 @@
 <div class="container">
-    <div class="profile">
-        <img src="profile.png" alt="default user">
-        <h3>User Info:</h3>
+  <div class="profile">
+    <img src="profile.png" alt="default user" />
+    <h3>User Info:</h3>
+    <ng-container *ngIf="!isEditMode">
+      <div class="flex">
+        <p>Username:</p>
+        <p>Stamat</p>
+      </div>
+      <div class="flex">
+        <p>Email:</p>
+        <p>stamat.doegmail.com</p>
+      </div>
+      <div class="flex">
+        <p>Phone:</p>
+        <p>+359 888 100 100</p>
+      </div>
+      <button class="edit-button" (click)="toggleEditMode()">Edit</button>
+    </ng-container>
+    <ng-container *ngIf="isEditMode">
+      <form [formGroup]="form" (ngSubmit)="saveProfileHandler()">
         <div class="flex">
-            <p>Username: </p>
-            <p>Stamat</p>
+          <p>Username:</p>
+          <input
+            type="text"
+            name="username"
+            id="username"
+            value="Johny"
+            formControlName="username"
+          />
         </div>
         <div class="flex">
-            <p>Email: </p>
-            <p>stamat.doegmail.com</p>
+          <p>Email:</p>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            value="john.doe@gmail.com"
+            formControlName="email"
+          />
         </div>
         <div class="flex">
-            <p>Phone: </p>
-            <p>+359 888 100 100</p>
+          <p>Phone:</p>
+          <div>
+            <select name="select-tel" id="select-tel" class="tel">
+              <option value="00359">+359</option>
+            </select>
+            <input
+              type="text"
+              name="tel"
+              id="tel"
+              value="885 888 888"
+              formControlName="phone"
+            />
+          </div>
         </div>
-        <button class="edit-button">Edit</button>
-    </div>
+        <button class="red-button">Cancel</button>
+        <button class="green-button">Save</button>
+      </form>
+    </ng-container>
+  </div>
 </div>

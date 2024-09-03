@@ -17,7 +17,7 @@ export class LoginComponent {
   login(form: NgForm): void {
     console.log(form.value);
     // TODO: Form now we are not handling the data. I will do it later.
-    // this.userService.login();
-    // this.routing.navigate(['/']);
+    this.userService.login();
+    this.routing.navigate(['/']);
   }
 }
