@@ -2,6 +2,8 @@
   <div class="profile">
     <img src="profile.png" alt="default user" />
     <h3>User Info:</h3>
+
+    <!-- READONLY MODE -->
     <ng-container *ngIf="!isEditMode">
       <div class="flex">
         <p>Username:</p>
@@ -9,7 +11,7 @@
       </div>
       <div class="flex">
         <p>Email:</p>
-        <p>stamat.doegmail.com</p>
+        <p>stamat&#64;gmail.com</p>
       </div>
       <div class="flex">
         <p>Phone:</p>
@@ -17,13 +19,15 @@
       </div>
       <button class="edit-button" (click)="toggleEditMode()">Edit</button>
     </ng-container>
+
+    <!-- EDIT MODE -->
     <ng-container *ngIf="isEditMode">
       <form [formGroup]="form" (ngSubmit)="saveProfileHandler()">
         <div class="flex">
           <p>Username:</p>
           <input
             type="text"
-            name="username"
+            name="username" 
             id="username"
             value="Johny"
             formControlName="username"
@@ -58,5 +62,6 @@
         <button class="green-button">Save</button>
       </form>
     </ng-container>
+
   </div>
 </div>
