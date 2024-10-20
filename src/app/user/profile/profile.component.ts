@@ -22,8 +22,11 @@ export class ProfileComponent {
   }
 
   saveProfileHandler(): void {
+    if(this.form.invalid){
+      return;
+    }
+    console.log(this.form.value);
     this.toggleEditMode();
-    console.log('Profile saved successfully');
   }
 
   toggleEditMode(): void {
