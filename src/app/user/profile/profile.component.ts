@@ -3,6 +3,12 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { DEFAULT_EMAIL_DOMAINS } from '../../shared/constants';
 import { emailValidator } from '../../shared/validators/email/email-validator';
 
+interface Profile{
+  username: string;
+  email: string;
+  phone: string;
+}
+
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
@@ -10,6 +16,12 @@ import { emailValidator } from '../../shared/validators/email/email-validator';
 })
 export class ProfileComponent {
   isEditMode: Boolean = false;
+
+  profileDetails: Profile = {
+    username: "Stamat",
+    email: "stamat@gmail.com",
+    phone: "888100000"
+  };
 
   form = this.fb.group({
     username: ["", [Validators.required, Validators.minLength(5)]],
@@ -25,7 +37,11 @@ export class ProfileComponent {
     if(this.form.invalid){
       return;
     }
+
+    this.profileDetails = {...this.form.value} as Profile;
+
     console.log(this.form.value);
+
     this.toggleEditMode();
   }
  
