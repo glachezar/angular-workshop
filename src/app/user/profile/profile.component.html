@@ -21,28 +21,51 @@
     </ng-container>
 
     <!-- EDIT MODE -->
+     <!-- Username Input -->
     <ng-container *ngIf="isEditMode">
       <form [formGroup]="form" (ngSubmit)="saveProfileHandler()">
         <div class="flex">
           <p>Username:</p>
           <input
             type="text"
-            name="username" 
-            id="username"
+             id="username"
             value="Johny"
             formControlName="username"
           />
-        </div>
+        </div> 
+
+        <!-- Username Validation -->
+        <ng-container *ngIf="form.get('username')?.touched">
+          <p class="error" *ngIf="form.get('username')?.errors?.['required']">
+            Username is required!
+          </p>
+          <p class="error" *ngIf="form.get('username')?.errors?.['minlength']">
+            Username must be at least 5 characters!
+          </p>
+        </ng-container>
+
+        <!-- Email Input -->
         <div class="flex">
           <p>Email:</p>
           <input
             type="email"
-            name="email"
             id="email"
             value="john.doe@gmail.com"
             formControlName="email"
           />
         </div>
+
+        <!-- Email Validation -->
+        <ng-container *ngIf="form.get('email')?.touched">
+          <p class="error" *ngIf="form.get('email')?.errors?.['minlength']">
+            Email is required!
+          </p>
+          <p class="error" *ngIf="form.get('email')?.errors?.['emailValidator']">
+            Email is not valid!
+          </p>
+        </ng-container>
+
+        <!-- Phone Input -->
         <div class="flex">
           <p>Phone:</p>
           <div>
@@ -51,13 +74,14 @@
             </select>
             <input
               type="text"
-              name="tel"
               id="tel"
-              value="885 888 888"
-              formControlName="phone"
+              value="888 888 888"
+              formControlName="tell"
             />
           </div>
         </div>
+
+        <!-- ACTIONS -->
         <button class="red-button">Cancel</button>
         <button class="green-button">Save</button>
       </form>

@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
+import { DEFAULT_EMAIL_DOMAINS } from '../../shared/constants';
+import { emailValidator } from '../../shared/validators/email/email-validator';
 
 @Component({
   selector: 'app-profile',
@@ -10,9 +12,9 @@ export class ProfileComponent {
   isEditMode: Boolean = false;
 
   form = this.fb.group({
-    username: ['user1'],
-    email: ['email1'],
-    phone: ['tel1']
+    username: ["", [Validators.required, Validators.minLength(5)]],
+    email: ["", [Validators.required, emailValidator(DEFAULT_EMAIL_DOMAINS)]],
+    phone: [""]
   });
 
   constructor(private fb: FormBuilder) {
