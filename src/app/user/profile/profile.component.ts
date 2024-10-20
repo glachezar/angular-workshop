@@ -28,7 +28,11 @@ export class ProfileComponent {
     console.log(this.form.value);
     this.toggleEditMode();
   }
-
+ 
+  cancelEditMode(): void {
+    this.form.reset();
+    this.toggleEditMode();
+  }
   toggleEditMode(): void {
     this.isEditMode = !this.isEditMode;
   }

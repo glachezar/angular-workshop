@@ -70,7 +70,7 @@
           <p>Phone:</p>
           <div>
             <select name="select-tel" id="select-tel" class="tel">
-              <option value="00359">+359</option>
+              <option value="+359">+359</option>
             </select>
             <input
               type="text"
@@ -81,7 +81,7 @@
         </div>
 
         <!-- ACTIONS -->
-        <button class="red-button">Cancel</button>
+        <button class="red-button" (click)="cancelEditMode()">Cancel</button>
         <button class="green-button">Save</button>
       </form>
     </ng-container>
